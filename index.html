@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var dialogs = [[10,'出门时请多穿衣物注意保暖.'],
+                        [20,'昼夜温差极大，注意增减衣服保暖防寒.'],
+                        [25,'偏热,身体可能会不舒适,可适当降温哦.'],
+                        [30,'高温徘徊暑气难消，注意防暑.']];
+					var goodcondition = '温度适宜';
+					let temp = 5;// _self.realtime.temperature; 
+					
+					function getDialog(temp){
+						var str=goodcondition;
+                        if(temp < dialogs[0][0]){
+                            str = dialogs[0][1];
+                        }
+						else if(temp > dialogs[0][0] && temp < dialogs[0][0]){
+                            str = dialogs[0][1];
+                        }else if(temp < dialogs[1][0] && temp < dialogs[2][0]){
+                            str = dialogs[1][1];
+                        }else if(temp < dialogs[2][0] && temp < dialogs[3][0]){
+                            str = dialogs[2][1];
+                        }else {
+                            str = dialogs[3][1];
+                        }  
+                        return str; 
+					} 
+					let str = getDialog(temp)
+					console.log(str);
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
